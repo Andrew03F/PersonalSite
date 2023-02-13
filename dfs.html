@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>My Sketch</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.js"></script>
+    <script src=
+    "https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js">
+    </script>
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="sketch.js"></script>
+  </head>
+
+  <body>
+    <h4>Speed:</h4>
+    <div id="sketch-holder">
+    <!-- Our sketch will go here! -->
+    </div>
+    <article class="a">
+        <h2> Use Case for the Depth-First Search in "Remove Islands
+            " Algorithm</h2>
+        
+        <p class="t">
+            The algorithm demonstrated here is called the remove island algorithm. 
+            The name comes from the idea that black squares can be thought of as land and white squares as water.
+            Additionally, all the borders are considered land. 
+            Contiguous land masses that are not connected to a border are though of as islands, the goal of the algorithm is to remove them. 
+        </p>
+        <h4>Solution</h4>
+        <p class="t">
+            The key intuition to solve this problem is to think about the grid of cells as many disjoint graphs such that each cell is a node and two nodes share an edge if and only if they are nieghbors in the grid.
+            Then it is as simply as iterating through the graphs and performing a depth-first search for a border node.
+
+        </p>
+        <a class="button" href="https://github.com/Andrew03F/TrailerBackingSim">https://github.com/Andrew03F/TrailerBackingSim</a>
+    </article>
+
+  </body>
+</html>
