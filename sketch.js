@@ -13,6 +13,7 @@ let ld = .53;
 let button;
 let reset = false;
 let speed;
+let padtop = 90;
 function setup() {
   var canvas = createCanvas(w, h);
   canvas.parent('sketch-holder');
@@ -23,17 +24,22 @@ function setup() {
   initls();
   //controls
   button = createButton("reset");
-  button.position(460 ,10);
   button.mousePressed(reseter);
 
-  speed = createSlider(0, 255, 188);
-  speed.position(100, 10);
-  speed.style('width', '300px');
- 
+
+  speed = createSlider(45, 255, 80);
   
+  speed.style('width', '300px');
+  
+  label = createDiv('Speed:');
+  speed.parent(label);
+  speed.parent('controls')
 
 }
 function draw() {
+  speed.position(windowWidth / 2 - 150, 530 + padtop);
+  label.position(windowWidth/2 -  210, 525+ padtop);  
+  button.position(windowWidth/2 + 200, 525+ padtop);
   drawGrid();
   if(reset){ initMSV();}
   if (stack.length === 0) {
@@ -116,6 +122,7 @@ function nextv() {
     }
   }
   initMSV();
+  wait(2000);
   for (var x = 0; x < cells ; x++) {
     for (var y= 0; y < cells ; y++) {
       if (m[x][y] === 1 && v[x][y] === 0) {
